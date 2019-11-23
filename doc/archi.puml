@@ -1,0 +1,108 @@
+@startuml
+
+class House{
+Car car
+}
+
+class Car{
+String brand
+}
+
+Car ..> House:依赖
+
+
+class People{
+   String name
+   int age
+   eat():void
+}
+
+class Male{
+work():void
+}
+
+class Female{
+shop():void
+}
+
+Male--|>People : 泛化
+Female--|>People: 泛化
+
+
+class Address{
+City city
+}
+
+class City{
+}
+
+Address->City:关联
+
+class Boy{
+Girl girl
+}
+
+class Girl{
+Boy boy
+}
+
+Boy<-->Girl:双向关联
+
+class Bitmap{
+decode():Bitmap
+}
+
+Bitmap->Bitmap:自关联
+
+interface USB{
+connect():boolean
+disconnect():boolean
+}
+
+class Keyboard{
+}
+
+Keyboard..|>USB : 实现
+
+class UDisk{
+}
+
+UDisk..|>USB:实现
+
+
+class Student{
+String name
+int age
+study():void
+}
+
+class School{
+List<Student> students
+}
+
+Student o-->School : 聚合
+
+class InternetBar{
+List<Student> students
+}
+
+Student o-->InternetBar:聚合
+
+class View{
+}
+
+class ViewGroup{
+addView(View view):void
+}
+
+View*-->ViewGroup:组合关系
+
+
+
+
+
+
+
+
+
+@enduml
